@@ -1,9 +1,11 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-driver = webdriver.Chrome(executable_path="./driver/chromedriver")
+driver = webdriver.Chrome(executable_path="driver/chromedriver")
 
 driver.get(url="https://rahulshettyacademy.com/angularpractice/")
 
@@ -31,4 +33,5 @@ driver.set_window_size(300, 500)
 
 # More: https://selenium-python.readthedocs.io/api.html
 
-# driver.close()
+time.sleep(5)
+driver.quit()

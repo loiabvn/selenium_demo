@@ -1,7 +1,9 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-driver = webdriver.Chrome(executable_path="./driver/chromedriver")
+driver = webdriver.Chrome(executable_path="driver/chromedriver")
 
 driver.get(url="https://rahulshettyacademy.com/angularpractice/")
 
@@ -15,4 +17,5 @@ driver.find_element(by=By.XPATH, value="/html/body/app-root/form-comp/div/form/i
 
 print(driver.find_element(by=By.XPATH, value="/html/body/app-root/form-comp/div/div[2]/div").text)
 
-# driver.close()
+time.sleep(5)
+driver.quit()

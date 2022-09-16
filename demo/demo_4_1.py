@@ -2,10 +2,8 @@
 # Execute command: pytest demo_4_1.py --verbose --capture=no
 import pytest
 
-from base_class import BaseClass
 
-
-class TestClass(BaseClass):
+class TestClass:
     @classmethod
     def setup_class(cls):
         print("\n===== BEGIN =====")
@@ -38,8 +36,6 @@ class TestClass(BaseClass):
 
     def test_tc1(self, data_ok):
         print('\ttc_content_1', data_ok)
-        logger = self.getLogger()
-        logger.info(123)
         assert True
 
     def test_tc2(self, data_fail):

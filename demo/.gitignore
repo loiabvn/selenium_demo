@@ -1,7 +1,5 @@
 .pytest_cache
-.idea
-demo/debug.log
+debug.log
 screenshot.jpg
 report.html
 assets
-venv
