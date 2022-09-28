@@ -2,6 +2,7 @@
 .idea
 demo/debug.log
 screenshot.jpg
+screenshot.png
 report.html
 assets
 venv

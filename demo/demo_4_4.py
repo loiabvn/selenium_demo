@@ -1,7 +1,7 @@
 # Selenium + python Unitest (pytest)
-# Execute command: pytest demo_4_4.py --html=report.html -s
+# Cmd: pytest demo/demo_4_4.py --html=report.html -s
 import pytest
-from selenium_demo.BaseClass import BaseClass
+from demo.BaseClass import BaseClass
 
 
 class TestClass(BaseClass):

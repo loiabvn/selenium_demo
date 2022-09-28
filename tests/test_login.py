@@ -1,5 +1,5 @@
 # Selenium + python Unitest (pytest)
-# Execute command: pytest demo_4_4.py --html=report.html -s
+# Cmd: pytest tests/test_login.py --html=report.html -s
 import time
 
 import pytest

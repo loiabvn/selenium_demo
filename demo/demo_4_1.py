@@ -1,5 +1,5 @@
 # Selenium + python Unitest (pytest)
-# Execute command: pytest demo_4_1.py --verbose --capture=no
+# Execute command: pytest demo/demo_4_1.py --verbose --capture=no
 import pytest
 
 

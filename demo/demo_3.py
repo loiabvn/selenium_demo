@@ -1,12 +1,17 @@
+# Cmd: python3 demo/demo_3.py
 import time
+import os
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-driver = webdriver.Chrome(executable_path="driver/chromedriver")
+# Connect to chrome via driver
+file_path = os.path.dirname(os.path.abspath(__file__))
+driver = webdriver.Chrome(executable_path=file_path + "/driver/chromedriver")
 
+# Go to website
 driver.get(url="https://rahulshettyacademy.com/angularpractice/")
 
 # 1. Scroll to bottom
@@ -26,12 +31,13 @@ result_message = wait.until(
 print(result_message)
 
 # 3. Screenshot
-driver.get_screenshot_as_file(filename="screenshot.jpg")
+driver.get_screenshot_as_file(filename="screenshot.png")
 
 # 4. Set window size
 driver.set_window_size(300, 500)
 
 # More: https://selenium-python.readthedocs.io/api.html
 
+# Wait 5s & close browser
 time.sleep(5)
 driver.quit()
