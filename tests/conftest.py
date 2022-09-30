@@ -12,12 +12,20 @@ def pytest_addoption(parser):
 @pytest.fixture(scope='class')
 def setup(request):
     browser = request.config.option.browser
+    options = webdriver.ChromeOptions()
     if browser == 'chrome':
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        # driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        options = webdriver.ChromeOptions()
     elif browser == 'firefox':
-        driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
+        # driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
+        options = webdriver.FirefoxOptions()
     else:
         pytest.skip()
+
+    driver = webdriver.Remote(
+        command_executor="http://selenium-hub:4444/wd/hub",
+        options=options
+    )
 
     driver.implicitly_wait(10)
     driver.maximize_window()
